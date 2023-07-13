@@ -7,16 +7,16 @@ import Information from "../components/Information";
 import Reason from "../components/Reason";
 import About from "../components/About";
 
-const Home = () => {
+const Home = ({ books }) => {
   return (
     <>
       <Landing />
       <Information />
-      <Discounted />
-      <FeaturedBooks />
-      <Reason/>
-      <About/>
+      <Discounted books={books} />
       <Explore />
+      <FeaturedBooks />
+      <Reason />
+      
     </>
   );
 };

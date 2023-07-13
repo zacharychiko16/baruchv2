@@ -2,16 +2,16 @@ import React from "react";
 
 function About() {
   return (
-    <section class="About">
+    <section id="ab" class="About">
       <h1 class="heading">
         About <span class="red">Us</span>
       </h1>
-      <p id="about">
+      <p id="about" >
         Welcome to
         <span class="red"> Baruch Wholesale and Retail Trading! </span>
         Our supermarket has a rich history rooted in the passion for business
         and a deep understanding of our community. Our founder, born and raised
-        in Tobago, has always had a drive for entrepreneurship, leading him to
+        in <span className="red">Speyside</span> Tobago, has always had a drive for entrepreneurship, leading him to
         explore various ventures before establishing our beloved supermarket. <br />
          At
         <span class="red"> Baruch</span>, our mission is simple: to provide{" "}

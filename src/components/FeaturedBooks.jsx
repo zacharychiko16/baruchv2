@@ -36,18 +36,17 @@ const FeaturedBooks = () => {
               <li>
                 <div class="steps__main">
                   <div class="steps__number">
-                    <h2>03</h2>
+                    <h2>02</h2>
                   </div>
                   <div class="steps__description">
                     <h2>
-                      <span class="red">Enjoy</span>
+                      <span class="red">Pay</span>
                     </h2>
                     <p>
-                      After completing the payment, all that's left to do is sit
-                      back and enjoy your items. Whether you've opted for
-                      <span class="red">delivery</span> or
-                      <span class="red">curbside pick up</span> , your chosen
-                      items will be made available to you.
+                      The second step involves making your payment. You have two
+                      convenient options: cash or debit card. You can use cash
+                      or your debit card to pay upon delivery, ensuring a
+                      hassle-free transaction.
                     </p>
                   </div>
                 </div>

@@ -1,25 +1,57 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Price from "./Price";
 import Rating from "./Rating";
 
-const Book = ({ book }) => {
-  return (
-      <div className="box">
-        <Link to={`/books/${book.id}`}>
-          <img src={book.url} alt="" className="book__img" />
+const Book = ({ book, addToCart }) => {
+   return (
+    <div className="box">
+      <Link to={`/books/${book.id}`}>
+        <img src={book.url} alt="" className="book__img" />
+      </Link>
+      <h3 className="book__title">
+        <Link to={`/books/${book.id}`} className="book__title__link">
+          {book.title}
         </Link>
-        <h3 className="book__title">
-          <Link to={`/books/${book.id}`} className="book__title__link">
-            {book.title}
-          </Link>
-        </h3>
-        {/* <Rating rating={book.rating} /> */}
-        <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
-        <a href="#" class="btn">order now</a>
-      </div>
+      </h3>
+      {/* <Rating rating={book.rating} /> */}
+      <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
+    </div>
   );
 };
+
+export default Book;
+
+
+// import React, { useEffect, useRef, useState } from "react";
+// import { Link } from "react-router-dom";
+// import Price from "./Price";
+// import Rating from "./Rating";
+
+// const Book = ({ book, addToCart  }) => {
+//   return (
+//     // const handleOrderClick = () => {
+//     //   addToCart(book);
+//     // }
+
+    
+
+
+//       <div className="box">
+//         <Link to={`/books/${book.id}`}>
+//           <img src={book.url} alt="" className="book__img" />
+//         </Link>
+//         <h3 className="book__title">
+//           <Link to={`/books/${book.id}`} className="book__title__link">
+//             {book.title}
+//           </Link>
+//         </h3>
+//         {/* <Rating rating={book.rating} /> */}
+//         <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
+//         <a href="#" class="btn" onClick={handleOrderClick}>order now</a>
+//       </div>
+//   );
+// };
 
 {
   /* <section class="popular" id="popular">
@@ -45,4 +77,3 @@ const Book = ({ book }) => {
 </section> */
 }
 
-export default Book;

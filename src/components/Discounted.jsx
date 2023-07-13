@@ -2,7 +2,7 @@ import React from "react";
 import { books } from "../data";
 import Book from "./ui/Book";
 
-const Discounted = () => {
+const Discounted = ({addToCart}) => {
   return (
     <section className="popular" id="popular">
       <h1 className="heading">
@@ -12,9 +12,11 @@ const Discounted = () => {
           {books
           .filter((book) => book.rating > 4)
           .slice(0, 6)
-          .map((book) => (
-            <Book book={book} key={book.id} />
+          .map((book) => ( 
+            <Book book={book} key={book.id}/>
+           
           ))}
+          
         </div>
     </section>
   );

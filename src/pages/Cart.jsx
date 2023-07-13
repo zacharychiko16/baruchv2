@@ -22,7 +22,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
               </div>
               <div className="cart">
                 {cart.length > 0 && <div className="cart__header">
-                  <span className="cart__book">Book</span>
+                  <span className="cart__book">Item</span>
                   <span className="cart__quantity">Quantity</span>
                   <span className="cart__total">Price</span>
                 </div>}
@@ -79,9 +79,9 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                 </div>
                 {cart.length === 0 && <div className="cart__empty">
                   <img src={EmptyCart} alt="" className="cart__empty--img" />
-                  <h2>You dont have any books in your cart!</h2>
+                  <h2>You dont have any Items in your cart!</h2>
                   <Link to="/books">
-                  <button className="btn">Browse Books</button>
+                  <button className="btn">Browse Products</button>
                   </Link>
                 </div>}
               </div>

@@ -6,6 +6,7 @@ import {
   faTimes,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Nav = ({ numberOfItems }) => {
   const [isActive, setIsActive] = useState(false);
@@ -14,36 +15,43 @@ const Nav = ({ numberOfItems }) => {
     setIsActive(!isActive);
   };
 
+  const scrollToSection = () => {
+    scroll.scrollTo("find", {
+      smooth: true,
+      offset: -50, // Adjust the offset as needed to account for any fixed headers
+    });
+  };
+
   return (
     <header>
       <Link to="/" className="logo">
+        <FontAwesomeIcon className="red" icon={faShoppingCart} />
         BAR<span className="red">UCH</span>
       </Link>
-      <div
-        id="menu-bar"
-        className={`fas ${isActive ? "fa-times" : "fa-bars"}`}
-        onClick={toggleMenu}
-      >
-        {isActive ? (
-          <FontAwesomeIcon icon={faTimes} />
-        ) : (
-          <FontAwesomeIcon icon={faBars} />
-        )}
-      </div>
-      <nav className={`navbar ${isActive ? "active" : ""}`}>
-        <Link to="/" className="a">
-          Home
-        </Link>
-        <Link to="/books" className="a">
-          Find Us
-        </Link>
-        <Link to="/books" className="a">
-          About
-        </Link>
-        <Link to="/books" className="a">
-          Order
-        </Link>
-        <Link to="/cart" className="a cart">
+      <ul className="nav__links">
+        <div
+          id="menu-bar"
+          className={`fas ${isActive ? "fa-times" : "fa-bars"}`}
+          onClick={toggleMenu}
+        >
+          {isActive ? (
+            <FontAwesomeIcon icon={faTimes} />
+          ) : (
+            <FontAwesomeIcon icon={faBars} />
+          )}
+        </div>
+        <nav className={`navbar ${isActive ? "active" : ""}`}>
+          <Link to="/" className="a">
+            Home
+          </Link>
+          <Link to="/books" className="a">
+            All Items
+          </Link>
+          <Link to="/about" className="a">
+            About
+          </Link>
+        </nav>
+        <Link to="/cart">
           <div className="cart__icon">
             <FontAwesomeIcon icon={faShoppingCart} />
             {numberOfItems > 0 && (
@@ -51,7 +59,7 @@ const Nav = ({ numberOfItems }) => {
             )}
           </div>
         </Link>
-      </nav>
+      </ul>
     </header>
   );
 };

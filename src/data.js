@@ -23,6 +23,7 @@ export const books = [
     originalPrice: 29,
     salePrice: null,
     rating: 5,
+    desc: "Premium flour. Vitamin enriched",
   },
   {
     id: 4,
@@ -34,7 +35,7 @@ export const books = [
   },
   {
     id: 5,
-    title: "Nescafe Classic Coffee 200 g / 7 oz",
+    title: "Nescafe Classic Coffee 200g / 7 oz",
     url: "https://d1cft8rz0k7w99.cloudfront.net/n/4/7/0/6/47068655320ad0762a757ee2a58ae3161563da1c_CoffeeandTea_125985_01.jpg",
     originalPrice: 32,
     salePrice: null,

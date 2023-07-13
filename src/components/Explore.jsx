@@ -3,17 +3,12 @@ import { Link } from "react-router-dom";
 
 const Explore = () => {
   return (
-    <section id="explore">
-      {/* <div className="container">
-        <div className="row row__column">
-          <h2>
-            Explore more <span className="purple">Books</span>
-          </h2>
+    <section id="explore" className="explore">
+        <div className="button-container">
           <Link to="/books">
-            <button className="btn">Explore books</button>
+            <button id="more" className="btn">More items</button>
           </Link>
-        </div>
-      </div> */}
+          </div>
     </section>
   );
 };

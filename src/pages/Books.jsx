@@ -37,23 +37,23 @@ const Books = ({ books: initialBooks }) => {
           <div className="books__container">
             <div className="row">
               <div className="books__header">
-                <h2 className="section__title books__header--title">
-                  All Books
-                </h2>
+                <h1 className="heading">
+                  All <span className="red">Items</span>
+                </h1>
                 <select
                   defaultValue="Default"
                   id="filter"
                   onChange={(event) => filterBooks(event.target.value)}
                 >
                   <option value="Default" disabled>
-                    Sort
+                    Categories
                   </option>
                   <option value="LOW_TO_HIGH">Price, Low to High</option>
                   <option value="HIGH_TO_LOW">Price, High to Low</option>
                   <option value="RATING">Rating</option>
                 </select>
               </div>
-              <div className="books">
+              <div className="box-container">
                 {books.map((book) => (
                   <Book book={book} key={book.id} />
                 ))}
