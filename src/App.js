@@ -8,6 +8,7 @@ import BookInfo from "./pages/BookInfo";
 import Cart from "./pages/Cart";
 import { useEffect, useState } from "react";
 import About from "./components/About";
+import Checkout from "./pages/Checkout";
 
 
 function ScrollToTopOnRouteChange() {
@@ -74,6 +75,7 @@ function App() {
               <Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem}/>
             }
           />
+          <Route path= "/checkout" element={<Checkout/>}/>
           <Route path="/about" element={<About/>} />
         </Routes>
         <Footer />

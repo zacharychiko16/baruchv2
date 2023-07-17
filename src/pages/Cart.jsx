@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EmptyCart from "../assets/empty_cart.svg";
+import EmptyCart from "../assets/undraw_empty_cart_co35.svg";
 
 const Cart = ({ cart, changeQuantity, removeItem }) => {
   const total = () => {
@@ -16,16 +16,18 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
       <div id="books__main">
         <main>
           <div className="books__container">
-            <div className="row">
+            <div className="row__cart">
               <div className="book__selected--top">
                 <h2 className="cart__title">Cart</h2>
               </div>
               <div className="cart">
-                {cart.length > 0 && <div className="cart__header">
-                  <span className="cart__book">Item</span>
-                  <span className="cart__quantity">Quantity</span>
-                  <span className="cart__total">Price</span>
-                </div>}
+                {cart.length > 0 && (
+                  <div className="cart__header">
+                    <span className="cart__book">Item</span>
+                    <span className="cart__quantity">Quantity</span>
+                    <span className="cart__total">Price</span>
+                  </div>
+                )}
                 <div className="cart__body">
                   {cart.map((book) => {
                     return (
@@ -77,36 +79,37 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                     );
                   })}
                 </div>
-                {cart.length === 0 && <div className="cart__empty">
-                  <img src={EmptyCart} alt="" className="cart__empty--img" />
-                  <h2>You dont have any Items in your cart!</h2>
-                  <Link to="/books">
-                  <button className="btn">Browse Products</button>
-                  </Link>
-                </div>}
+                {cart.length === 0 && (
+                  <div className="cart__empty">
+                    <img src={EmptyCart} alt="" className="cart__empty--img" />
+                    <h2>You dont have any Items in your cart!</h2>
+                    <Link to="/books">
+                      <button className="btn">Browse Products</button>
+                    </Link>
+                  </div>
+                )}
               </div>
-              {cart.length > 0 && <div className="total">
-                <div className="total__item total__sub-total">
-                  <span>Subtotal</span>
-                  <span>${(total() * 0.9).toFixed(2)}</span>
+              {cart.length > 0 && (
+                <div className="total">
+                  <div className="total__item total__sub-total">
+                    <span>Subtotal</span>
+                    <span>${(total() * 0.9).toFixed(2)}</span>
+                  </div>
+                  <div className="total__item total__tax">
+                    <span>Tax</span>
+                    <span>${(total() * 0.1).toFixed(2)}</span>
+                  </div>
+                  <div className="total__item total__price">
+                    <span>Total</span>
+                    <span>${total().toFixed(2)}</span>
+                  </div>
+                  <Link to="/checkout">
+                  <button className="btn btn__checkout no-cusor">
+                    Proceed to checkout
+                  </button>
+                  </Link>
                 </div>
-                <div className="total__item total__tax">
-                  <span>Tax</span>
-                  <span>${(total() * 0.1).toFixed(2)}</span>
-                </div>
-                <div className="total__item total__price">
-                  <span>Total</span>
-                  <span>${total().toFixed(2)}</span>
-                </div>
-                <button
-                  className="btn btn__checkout no-cusor"
-                  onClick={() =>
-                    alert(`Haven't got around to doing this yet :()`)
-                  }
-                >
-                  Proceed to checkout
-                </button>
-              </div>}
+              )}
             </div>
           </div>
         </main>

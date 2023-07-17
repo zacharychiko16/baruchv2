@@ -877,7 +877,7 @@ select {
 */
 
 .cart__header {
-  background-color: #7342d6;
+  background-color: #f20707;
   margin: 0 24px;
   padding: 8px 16px;
   color: white;
@@ -888,21 +888,29 @@ select {
   margin: 24px;
   display: flex;
   padding-right: 8px;
+  
 }
 
 .cart__title {
+  margin-bottom: 16px;
+  color: #f20707;;
+}
+
+.row__cart {
   margin-bottom: 16px;
 }
 
 .cart__book {
   width: 60%;
   display: flex;
+  font-size: 18px;
 }
 
 .cart__quantity {
   width: 40%;
   display: flex;
   align-items: center;
+  font-size: 18px;
 }
 
 .cart__total {
@@ -994,6 +1002,11 @@ select {
   width: 100%;
   font-size: 16px;
   padding: 12px 0;
+}
+
+/* Checkout */
+.checkout__container {
+  margin-top: 60px;
 }
 
 
