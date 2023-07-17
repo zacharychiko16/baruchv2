@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Checkout() {
-  const [fullName, setFullName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [deliveryMethod, setDeliveryMethod] = useState('curbside');
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [deliveryMethod, setDeliveryMethod] = useState("curbside");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,12 +13,14 @@ function Checkout() {
   };
 
   return (
-    <section className='checkout__container'>
-      <h2>Checkout</h2>
+    <section className="checkout__container">
+      <h1 className="heading">
+         <span className="red">Checkout</span>
+      </h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="fullName">Full Name</label>
+        <div className="check">
           <input
+            placeholder="Full Name"
             type="text"
             id="fullName"
             value={fullName}
@@ -26,9 +28,9 @@ function Checkout() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="phoneNumber">Phone Number</label>
+        <div className="check">
           <input
+            placeholder="Phone Number"
             type="tel"
             id="phoneNumber"
             value={phoneNumber}
@@ -36,9 +38,9 @@ function Checkout() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
+        <div className="check">
           <input
+            placeholder="Email"
             type="email"
             id="email"
             value={email}
@@ -54,8 +56,8 @@ function Checkout() {
                 type="radio"
                 name="deliveryMethod"
                 value="curbside"
-                checked={deliveryMethod === 'curbside'}
-                onChange={() => setDeliveryMethod('curbside')}
+                checked={deliveryMethod === "curbside"}
+                onChange={() => setDeliveryMethod("curbside")}
               />
               Curbside Pickup
             </label>
@@ -66,8 +68,8 @@ function Checkout() {
                 type="radio"
                 name="deliveryMethod"
                 value="delivery"
-                checked={deliveryMethod === 'delivery'}
-                onChange={() => setDeliveryMethod('delivery')}
+                checked={deliveryMethod === "delivery"}
+                onChange={() => setDeliveryMethod("delivery")}
               />
               Delivery
             </label>
